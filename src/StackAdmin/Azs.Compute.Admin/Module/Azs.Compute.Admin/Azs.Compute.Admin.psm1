@@ -5,8 +5,6 @@ Licensed under the MIT License. See License.txt in the project root for license 
 
 Microsoft.PowerShell.Core\Set-StrictMode -Version Latest
 
-Write-Warning "Preview version of the module Azs.Compute.Admin loaded. Future release of this module may have breaking changes."
-
 # If the user supplied -Prefix to Import-Module, that applies to the nested module as well
 # Force import the nested module again without -Prefix
 if (-not (Get-Command Get-OperatingSystemInfo -Module PSSwaggerUtility -ErrorAction Ignore)) {
@@ -19,9 +17,11 @@ if (-not (Get-Command Get-OperatingSystemInfo -Module PSSwaggerUtility -ErrorAct
 }
 
 if ((Get-OperatingSystemInfo).IsCore) {
+    . (Join-Path -Path $PSScriptRoot "Test-CoreRequirements.ps1")
     $clr = 'coreclr'
 }
 else {
+    . (Join-Path -Path $PSScriptRoot "Test-FullRequirements.ps1")
     $clr = 'fullclr'
 }
 

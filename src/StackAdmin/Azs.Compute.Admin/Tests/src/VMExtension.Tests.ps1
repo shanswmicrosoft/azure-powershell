@@ -43,7 +43,6 @@ $Global:UseInstalled = $UseInstalled
 $global:RunRaw = $RunRaw
 
 . $PSScriptRoot\CommonModules.ps1
-. $PSScriptRoot\Common.ps1
 
 $global:TestName = ""
 $global:Location = "local"
@@ -54,7 +53,7 @@ InModuleScope Azs.Compute.Admin {
 
         BeforeEach {
 
-
+            . $PSScriptRoot\Common.ps1
 
             function ValidateVMExtension {
                 param(
