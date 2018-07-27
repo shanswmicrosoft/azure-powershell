@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-Disk
+# Get-AzsDisk
 
 ## SYNOPSIS
 
@@ -13,23 +13,23 @@ schema: 2.0.0
 
 ### Disks_List (Default)
 ```
-Get-Disk -Location <String> [-Start <Int32>] [-SharePath <String>] [-Count <Int32>]
+Get-AzsDisk -Location <String> [-Start <Int32>] [-SharePath <String>] [-Count <Int32>]
  [-UserSubscriptionId <String>] [-Status <String>] [<CommonParameters>]
 ```
 
 ### ResourceId_Disks_Get
 ```
-Get-Disk -ResourceId <String> [<CommonParameters>]
+Get-AzsDisk -ResourceId <String> [<CommonParameters>]
 ```
 
 ### InputObject_Disks_Get
 ```
-Get-Disk -InputObject <Disk> [<CommonParameters>]
+Get-AzsDisk -InputObject <Disk> [<CommonParameters>]
 ```
 
 ### Disks_Get
 ```
-Get-Disk -Location <String> -Name <String> [<CommonParameters>]
+Get-AzsDisk -Location <String> -Name <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -126,7 +126,7 @@ InModuleScope Azs.Compute.Admin {
         It "TestListDisks" {
             $global:TestName = 'TestListDisks'
 
-            $disks = Get-Disk -Location $global:Location
+            $disks = Get-AzsDisk -Location $global:Location
 
             $disks | Should Not Be $null
             foreach ($disk in $disks) {
@@ -136,18 +136,18 @@ InModuleScope Azs.Compute.Admin {
 			{
 				$firstDisk = $disks[0]
 				$tenantSubscriptionId = $($firstDisk.TenantId.Split("/", [System.StringSplitOptions]::RemoveEmptyEntries))[1]
-				$disksForSubscription = Get-Disk -Location $global:Location -TenantSubscriptionId $tenantSubscriptionId
+				$disksForSubscription = Get-AzsDisk -Location $global:Location -TenantSubscriptionId $tenantSubscriptionId
 				ValidateDisksTheSame -DisksRight $($disks | ?{$_.TenantId.Contains($tenantSubscriptionId)}) -DisksLeft $disksForSubscription
 
-                $disksForStatus = Get-Disk -Location $global:Location -Status $firstDisk.Status
+                $disksForStatus = Get-AzsDisk -Location $global:Location -Status $firstDisk.Status
 				ValidateDisksTheSame -DisksRight $($disks | ?{$_.Status.Equals($firstDisk.Status)}) -DisksLeft $disksForStatus
 
-                $disksForShare = Get-Disk -Location $global:Location -SharePath $firstDisk.SharePath
+                $disksForShare = Get-AzsDisk -Location $global:Location -SharePath $firstDisk.SharePath
 				ValidateDisksTheSame -DisksRight $($disks | ?{$_.SharePath.Equals($firstDisk.SharePath)}) -DisksLeft $disksForShare
 
                 if ($disks.Count -ge 2)
                 {
-                    $disksWithCountAndStart = Get-Disk -Location $global:Location -Start 1 -Count 1
+                    $disksWithCountAndStart = Get-AzsDisk -Location $global:Location -Start 1 -Count 1
 					ValidateDisksTheSame -DisksRight @($disks[1]) -DisksLeft @($disksWithCountAndStart)
                 }
 			}
@@ -156,7 +156,7 @@ InModuleScope Azs.Compute.Admin {
         It "TestGetDisk" {
             $global:TestName = 'TestGetDisk'
 
-            $disks = Get-Disk -Location $global:Location
+            $disks = Get-AzsDisk -Location $global:Location
 
             $disks | Should Not Be $null
             foreach ($disk in $disks) {
@@ -165,7 +165,7 @@ InModuleScope Azs.Compute.Admin {
 			if($disks.Count -gt 0)
 			{
 				$firstDisk = $disks[0]
-				$diskFromServer = Get-Disk -Location $global:Location -Name $firstDisk.DiskId
+				$diskFromServer = Get-AzsDisk -Location $global:Location -Name $firstDisk.DiskId
 				ValidateDiskTheSame -DiskRight $firstDisk -DiskLeft $diskFromServer
 			}
         }

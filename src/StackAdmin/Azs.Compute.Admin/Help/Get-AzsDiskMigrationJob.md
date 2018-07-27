@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-DiskMigrationJob
+# Get-AzsDiskMigrationJob
 
 ## SYNOPSIS
 
@@ -13,22 +13,22 @@ schema: 2.0.0
 
 ### DiskMigrationJobs_List (Default)
 ```
-Get-DiskMigrationJob [-Status <String>] -Location <String> [<CommonParameters>]
+Get-AzsDiskMigrationJob [-Status <String>] -Location <String> [<CommonParameters>]
 ```
 
 ### ResourceId_DiskMigrationJobs_Get
 ```
-Get-DiskMigrationJob -ResourceId <String> [<CommonParameters>]
+Get-AzsDiskMigrationJob -ResourceId <String> [<CommonParameters>]
 ```
 
 ### DiskMigrationJobs_Get
 ```
-Get-DiskMigrationJob -Location <String> -Name <String> [<CommonParameters>]
+Get-AzsDiskMigrationJob -Location <String> -Name <String> [<CommonParameters>]
 ```
 
 ### InputObject_DiskMigrationJobs_Get
 ```
-Get-DiskMigrationJob -InputObject <DiskMigrationJob> [<CommonParameters>]
+Get-AzsDiskMigrationJob -InputObject <DiskMigrationJob> [<CommonParameters>]
 ```
 
 ## DESCRIPTION

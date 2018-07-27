@@ -5,14 +5,14 @@ online version:
 schema: 2.0.0
 ---
 
-# Stop-DiskMigrationJob
+# Stop-AzsDiskMigrationJob
 
 ## SYNOPSIS
 
 ## SYNTAX
 
 ```
-Stop-DiskMigrationJob -Location <String> -MigrationId <String> [<CommonParameters>]
+Stop-AzsDiskMigrationJob -Location <String> -MigrationId <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION

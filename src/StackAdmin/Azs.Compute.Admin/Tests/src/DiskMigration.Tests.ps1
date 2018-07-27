@@ -75,7 +75,7 @@ InModuleScope Azs.Compute.Admin {
         It "TestDiskMigration" {
             $global:TestName = 'TestDiskMigration'
 
-            $disks = Get-Disk -Location $global:Location
+            $disks = Get-AzsDisk -Location $global:Location
             $disks | Should Not Be $null
 			$toMigrationDisks = New-Object System.Collections.Generic.List[Microsoft.AzureStack.Management.Compute.Admin.Models.Disk]
 			foreach($disk in $disks)
@@ -91,19 +91,19 @@ InModuleScope Azs.Compute.Admin {
             }
 			$migrationId = "ba0644a4-c2ed-4e3c-a167-089a32865297"; # this should be the same as session Records
 
-            $migration = New-DiskMigration -Location $global:Location -Name $migrationId -TargetShare $global:TargetShare -Disks $toMigrationDisks
+            $migration = New-AzsDiskMigration -Location $global:Location -Name $migrationId -TargetShare $global:TargetShare -Disks $toMigrationDisks
 			ValidateDiskMigration -DiskMigration $migration
 
 			$migration = Stop-DiskMigration -Location $global:Location -MigrationId $migration.MigrationId
 			ValidateDiskMigration -DiskMigration $migration 
 
-			$migrationFromGet = Get-DiskMigration -Location $global:Location -Name $migrationId
+			$migrationFromGet = Get-AzsDiskMigration -Location $global:Location -Name $migrationId
 			ValidateDiskMigration -DiskMigration $migrationFromGet 
 
-			$migrationList = Get-DiskMigration -Location $global:Location
+			$migrationList = Get-AzsDiskMigration -Location $global:Location
 			$migrationList | %{ValidateDiskMigration -DiskMigration $_ }
 
-			$migrationSucceededList = Get-DiskMigration -Location $global:Location  -Status "Succeeded"
+			$migrationSucceededList = Get-AzsDiskMigration -Location $global:Location  -Status "Succeeded"
             $migrationSucceededList | %{ValidateDiskMigration -DiskMigration $_ }
         }
     }

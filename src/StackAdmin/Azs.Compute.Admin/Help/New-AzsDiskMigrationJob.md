@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# New-DiskMigrationJob
+# New-AzsDiskMigrationJob
 
 ## SYNOPSIS
 
@@ -13,21 +13,21 @@ schema: 2.0.0
 
 ### DiskMigrationJobs_Create (Default)
 ```
-New-DiskMigrationJob
+New-AzsDiskMigrationJob
  -Disks <System.Collections.Generic.IList`1[Microsoft.AzureStack.Management.Compute.Admin.Models.Disk]>
  -TargetShare <String> -Location <String> -Name <String> [<CommonParameters>]
 ```
 
 ### ResourceId_DiskMigrationJobs_Create
 ```
-New-DiskMigrationJob -ResourceId <String>
+New-AzsDiskMigrationJob -ResourceId <String>
  -Disks <System.Collections.Generic.IList`1[Microsoft.AzureStack.Management.Compute.Admin.Models.Disk]>
  -TargetShare <String> [<CommonParameters>]
 ```
 
 ### InputObject_DiskMigrationJobs_Create
 ```
-New-DiskMigrationJob
+New-AzsDiskMigrationJob
  -Disks <System.Collections.Generic.IList`1[Microsoft.AzureStack.Management.Compute.Admin.Models.Disk]>
  -TargetShare <String> -InputObject <DiskMigrationJob> [<CommonParameters>]
 ```
