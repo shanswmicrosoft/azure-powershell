@@ -1238,7 +1238,8 @@
                         "status": "Unattached",
                         "sharePath": "\\\\SU1FileServer.mydomain.com\\SU1_ObjStore_4",
                         "actualSize": 183,
-                        "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Disks/diskrptest9vb55sb15w",
+                        "provisionSize": 3221225472,
+                        "userResourceId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Disks/diskrptest9vb55sb15w",
                         "resourceType": "Disk",
                         "diskSku": "Standard_LRS"
                       }
@@ -1253,7 +1254,8 @@
                         "status": "Unattached",
                         "sharePath": "\\\\SU1FileServer.mydomain.com\\SU1_ObjStore_2",
                         "actualSize": 1,
-                        "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestjrlt133h5g8t",
+                        "provisionSize": 3221225472,
+                        "userResourceId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestjrlt133h5g8t",
                         "resourceType": "Snapshot",
                         "diskSku": "Standard_LRS"
                       }
@@ -1268,7 +1270,8 @@
                         "status": "Unattached",
                         "sharePath": "",
                         "actualSize": 0,
-                        "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestlhy3gmrez379",
+                        "provisionSize": 3221225472,
+                        "userResourceId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestlhy3gmrez379",
                         "resourceType": "Snapshot",
                         "diskSku": "Standard_LRS"
                       }
@@ -1283,7 +1286,8 @@
                         "status": "Unattached",
                         "sharePath": "",
                         "actualSize": 0,
-                        "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Disks/diskrptest5wnmxirn",
+                        "provisionSize": 3221225472,
+                        "userResourceId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Disks/diskrptest5wnmxirn",
                         "resourceType": "Disk",
                         "diskSku": "Standard_LRS"
                       }
@@ -1298,7 +1302,7 @@
                         "status": "Unattached",
                         "sharePath": "",
                         "actualSize": 0,
-                        "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestj32ckp6df9v",
+                        "userResourceId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestj32ckp6df9v",
                         "resourceType": "Snapshot",
                         "diskSku": "Standard_LRS"
                       }
@@ -1313,7 +1317,8 @@
                         "status": "Unattached",
                         "sharePath": "",
                         "actualSize": 0,
-                        "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestthml7uzd3hs2",
+                        "provisionSize": 3221225472,
+                        "userResourceId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestthml7uzd3hs2",
                         "resourceType": "Snapshot",
                         "diskSku": "Standard_LRS"
                       }
@@ -1328,7 +1333,8 @@
                         "status": "Unattached",
                         "sharePath": "",
                         "actualSize": 0,
-                        "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestn9wefmbaqiu",
+                        "provisionSize": 3221225472,
+                        "userResourceId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestn9wefmbaqiu",
                         "resourceType": "Snapshot",
                         "diskSku": "Standard_LRS"
                       }
@@ -1352,7 +1358,7 @@
             "$ref": "#/parameters/LocationParameter"
           },
           {
-            "$ref": "#/parameters/TenantSubscriptionIdParameter"
+            "$ref": "#/parameters/UserSubscriptionIdParameter"
           },
           {
             "$ref": "#/parameters/DiskStateParameter"
@@ -1419,7 +1425,8 @@
                     "status": "Unattached",
                     "sharePath": "\\\\SU1FileServer.mydomain.com\\SU1_ObjStore_4",
                     "actualSize": 183,
-                    "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Disks/diskrptest9vb55sb15w",
+                    "provisionSize": 3221225472,
+                    "userResourceId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Disks/diskrptest9vb55sb15w",
                     "resourceType": "Disk",
                     "diskSku": "Standard_LRS"
                   }
@@ -1471,7 +1478,7 @@
         ]
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs": {
       "get": {
         "x-ms-examples": {
           "Returns a list of disk migration jobs.": {
@@ -1485,9 +1492,9 @@
                 "body": {
                   "value": [
                     {
-                      "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrations/0050e481-63cd-4ad1-9c49-b8cbb992b75e",
+                      "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrationjobs/0050e481-63cd-4ad1-9c49-b8cbb992b75e",
                       "name": "redmond/0050e481-63cd-4ad1-9c49-b8cbb992b75e",
-                      "type": "Microsoft.Compute.Admin/locations/diskmigrations",
+                      "type": "Microsoft.Compute.Admin/locations/diskmigrationjobs",
                       "location": "redmond",
                       "properties": {
                         "migrationId": "0050e481-63cd-4ad1-9c49-b8cbb992b75e",
@@ -1525,9 +1532,9 @@
                       }
                     },
                     {
-                      "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrations/9fbb98b2-fe81-449a-9d71-61bccb0d0489",
+                      "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrationjobs/9fbb98b2-fe81-449a-9d71-61bccb0d0489",
                       "name": "redmond/9fbb98b2-fe81-449a-9d71-61bccb0d0489",
-                      "type": "Microsoft.Compute.Admin/locations/diskmigrations",
+                      "type": "Microsoft.Compute.Admin/locations/diskmigrationjobs",
                       "location": "redmond",
                       "properties": {
                         "migrationId": "9fbb98b2-fe81-449a-9d71-61bccb0d0489",
@@ -1571,9 +1578,9 @@
           }
         },
         "tags": [
-          "DiskMigrations"
+          "DiskMigrationJobs"
         ],
-        "operationId": "DiskMigrations_List",
+        "operationId": "DiskMigrationJobs_List",
         "description": "Returns a list of disk migration jobs.",
         "parameters": [
           {
@@ -1601,7 +1608,7 @@
           "200": {
             "description": "OK -- The list of disk migration jobs has been returned.",
             "schema": {
-              "$ref": "#/definitions/DiskMigrationList"
+              "$ref": "#/definitions/DiskMigrationJobList"
             }
           }
         },
@@ -1616,7 +1623,7 @@
         ]
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations/{migrationId}": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs/{migrationId}": {
       "get": {
         "x-ms-examples": {
           "Returns the requested disk migration job.": {
@@ -1629,9 +1636,9 @@
             "responses": {
               "200": {
                 "body": {
-                  "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrations/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
+                  "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrationjobs/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
                   "name": "redmond/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
-                  "type": "Microsoft.Compute.Admin/locations/diskmigrations",
+                  "type": "Microsoft.Compute.Admin/locations/diskmigrationjobs",
                   "location": "redmond",
                   "properties": {
                     "migrationId": "ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
@@ -1673,9 +1680,9 @@
           }
         },
         "tags": [
-          "DiskMigrations"
+          "DiskMigrationJobs"
         ],
-        "operationId": "DiskMigrations_Get",
+        "operationId": "DiskMigrationJobs_Get",
         "description": "Returns the requested disk migration job.",
         "parameters": [
           {
@@ -1703,7 +1710,7 @@
           "200": {
             "description": "OK -- The disk migration job has been returned.",
             "schema": {
-              "$ref": "#/definitions/DiskMigration"
+              "$ref": "#/definitions/DiskMigrationJob"
             }
           }
         },
@@ -1732,11 +1739,7 @@
                   "properties": {
                     "diskId": "423e4eb4-f791-4d13-ad5b-4d415733b0d6",
                     "status": "Unattached",
-                    "sharePath": "\\\\SU1FileServer.mydomain.com\\SU1_ObjStore_4",
-                    "actualSize": 183,
-                    "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Disks/diskrptest9vb55sb15w",
-                    "resourceType": "Disk",
-                    "diskSku": "Standard_LRS"
+                    "sharePath": "\\\\SU1FileServer.mydomain.com\\SU1_ObjStore_4"
                   }
                 },
                 {
@@ -1747,11 +1750,7 @@
                   "properties": {
                     "diskId": "48dc9b56-5883-4011-9dc3-0e527f33e6ab",
                     "status": "Unattached",
-                    "sharePath": "\\\\SU1FileServer.mydomain.com\\SU1_ObjStore_2",
-                    "actualSize": 1,
-                    "tenantId": "/subscriptions/4496690e-348e-4dc0-addc-17395c3966ba/resourceGroups/DISKRG6ECD14E6/providers/Microsoft.Compute/Snapshots/diskrptestjrlt133h5g8t",
-                    "resourceType": "Snapshot",
-                    "diskSku": "Standard_LRS"
+                    "sharePath": "\\\\SU1FileServer.mydomain.com\\SU1_ObjStore_2"
                   }
                 }
               ]
@@ -1759,9 +1758,9 @@
             "responses": {
               "200": {
                 "body": {
-                  "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrations/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
+                  "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrationjobs/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
                   "name": "redmond/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
-                  "type": "Microsoft.Compute.Admin/locations/diskmigrations",
+                  "type": "Microsoft.Compute.Admin/locations/diskmigrationjobs",
                   "location": "redmond",
                   "properties": {
                     "migrationId": "ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
@@ -1803,9 +1802,9 @@
           }
         },
         "tags": [
-          "DiskMigrations"
+          "DiskMigrationJobs"
         ],
-        "operationId": "DiskMigrations_Create",
+        "operationId": "DiskMigrationJobs_Create",
         "description": "Create a disk migration job.",
         "parameters": [
           {
@@ -1839,7 +1838,7 @@
           "200": {
             "description": "OK --  Disk migration job is created successfully.",
             "schema": {
-              "$ref": "#/definitions/DiskMigration"
+              "$ref": "#/definitions/DiskMigrationJob"
             }
           }
         },
@@ -1851,7 +1850,7 @@
         ]
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations/{migrationId}/Cancel": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs/{migrationId}/Cancel": {
       "post": {
         "x-ms-examples": {
           "Cancel a disk migration job.": {
@@ -1864,9 +1863,9 @@
             "responses": {
               "200": {
                 "body": {
-                  "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrations/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
+                  "id": "/subscriptions/04666444-56f0-4d4f-afc5-dbd6b134b084/providers/Microsoft.Compute.Admin/locations/redmond/diskmigrationjobs/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
                   "name": "redmond/ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
-                  "type": "Microsoft.Compute.Admin/locations/diskmigrations",
+                  "type": "Microsoft.Compute.Admin/locations/diskmigrationjobs",
                   "location": "redmond",
                   "properties": {
                     "migrationId": "ec9f79cf-e4d7-4d37-926a-e69c2198be8a",
@@ -1908,9 +1907,9 @@
           }
         },
         "tags": [
-          "DiskMigrations"
+          "DiskMigrationJobs"
         ],
-        "operationId": "DiskMigrations_Cancel",
+        "operationId": "DiskMigrationJobs_Cancel",
         "description": "Cancel a disk migration job.",
         "parameters": [
           {
@@ -1938,7 +1937,7 @@
           "200": {
             "description": "OK --  Disk migration job cancallation is called.",
             "schema": {
-              "$ref": "#/definitions/DiskMigration"
+              "$ref": "#/definitions/DiskMigrationJob"
             }
           }
         },
@@ -2298,44 +2297,47 @@
       "properties": {
         "diskId": {
           "description": "The disk id.",
-          "type": "string",
-          "readOnly": false
+          "type": "string"
         },
         "status": {
           "description": "The disk status.",
-          "$ref": "#/definitions/DiskState",
-          "readOnly": false
+          "$ref": "#/definitions/DiskState"
         },
         "sharePath": {
           "description": "The disk share path.",
-          "type": "string",
-          "readOnly": false
+          "type": "string"
         },
         "actualSize": {
           "description": "The actual size of disk.",
           "type": "integer",
           "format": "int64",
-          "readOnly": false
+          "readOnly": true
+        },
+        "provisionSize": {
+          "description": "The provision size of disk.",
+          "type": "integer",
+          "format": "int64",
+          "readOnly": true
         },
         "managedBy": {
           "description": "Compute resource Uri which owns this disk.",
           "type": "string",
-          "readOnly": false
+          "readOnly": true
         },
-        "tenantId": {
+        "userResourceId": {
           "description": "The disk resource Uri from tenant view.",
           "type": "string",
-          "readOnly": false
+          "readOnly": true
         },
         "resourceType": {
           "description": "The type of the resource.",
           "$ref": "#/definitions/DiskResourceType",
-          "readOnly": false
+          "readOnly": true
         },
         "diskSku": {
           "description": "the disk sku.",
           "$ref": "#/definitions/AccountType",
-          "readOnly": false
+          "readOnly": true
         }
       }
     },
@@ -2528,14 +2530,13 @@
         }
       }
     },
-    "DiskMigrationProperties": {
+    "DiskMigrationJobProperties": {
       "description": "Disk migration job properties.",
       "type": "object",
       "properties": {
         "migrationId": {
           "description": "The disk migration id.",
-          "type": "string",
-          "readOnly": false
+          "type": "string"
         },
         "status": {
           "description": "The current status of disk migration job.",
@@ -2572,13 +2573,13 @@
         }
       }
     },
-    "DiskMigration": {
+    "DiskMigrationJob": {
       "description": "Disk migration job.",
       "type": "object",
       "properties": {
         "properties": {
           "x-ms-client-flatten": true,
-          "$ref": "#/definitions/DiskMigrationProperties",
+          "$ref": "#/definitions/DiskMigrationJobProperties",
           "description": "Disk migration properties."
         }
       },
@@ -2588,7 +2589,7 @@
         }
       ]
     },
-    "DiskMigrationList": {
+    "DiskMigrationJobList": {
       "type": "object",
       "description": "List of disk migration jobs.",
       "properties": {
@@ -2596,7 +2597,7 @@
           "description": "List of disk migration jobs.",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/DiskMigration"
+            "$ref": "#/definitions/DiskMigrationJob"
           }
         },
         "nextLink": {
@@ -2707,9 +2708,9 @@
       "type": "string",
       "x-ms-parameter-location": "method"
     },
-    "TenantSubscriptionIdParameter": {
+    "UserSubscriptionIdParameter": {
       "description": "Tenant Subscription Id which the resource belongs to.",
-      "name": "tenantSubscriptionId",
+      "name": "userSubscriptionId",
       "type": "string",
       "in": "query",
       "required": false,

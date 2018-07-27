@@ -13,8 +13,11 @@ Licensed under the MIT License. See License.txt in the project root for license 
 .PARAMETER ResourceId
     The resource id.
 
-.PARAMETER TenantSubscriptionId
-    Tenant Subscription Id which the resource belongs to.
+.PARAMETER InputObject
+    The input object of type Microsoft.AzureStack.Management.Compute.Admin.Models.Disk.
+
+.PARAMETER Location
+    Location of the resource.
 
 .PARAMETER Start
     The start index of disks in query.
@@ -22,14 +25,11 @@ Licensed under the MIT License. See License.txt in the project root for license 
 .PARAMETER SharePath
     The source share which the resource belongs to.
 
-.PARAMETER InputObject
-    The input object of type Microsoft.AzureStack.Management.Compute.Admin.Models.Disk.
-
 .PARAMETER Count
     The maximum number of disks to return.
 
-.PARAMETER Location
-    Location of the resource.
+.PARAMETER UserSubscriptionId
+    Tenant Subscription Id which the resource belongs to.
 
 .PARAMETER Status
     The parameters of disk state.
@@ -47,9 +47,14 @@ function Get-Disk
         [System.String]
         $ResourceId,
     
-        [Parameter(Mandatory = $false, ParameterSetName = 'Disks_List')]
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true, ParameterSetName = 'InputObject_Disks_Get')]
+        [Microsoft.AzureStack.Management.Compute.Admin.Models.Disk]
+        $InputObject,
+    
+        [Parameter(Mandatory = $true, ParameterSetName = 'Disks_List')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'Disks_Get')]
         [System.String]
-        $TenantSubscriptionId,
+        $Location,
     
         [Parameter(Mandatory = $false, ParameterSetName = 'Disks_List')]
         [System.Nullable`1[System.Int32]]
@@ -59,18 +64,13 @@ function Get-Disk
         [System.String]
         $SharePath,
     
-        [Parameter(Mandatory = $true, ValueFromPipeline = $true, ParameterSetName = 'InputObject_Disks_Get')]
-        [Microsoft.AzureStack.Management.Compute.Admin.Models.Disk]
-        $InputObject,
-    
         [Parameter(Mandatory = $false, ParameterSetName = 'Disks_List')]
         [System.Nullable`1[System.Int32]]
         $Count = $null,
     
-        [Parameter(Mandatory = $true, ParameterSetName = 'Disks_List')]
-        [Parameter(Mandatory = $true, ParameterSetName = 'Disks_Get')]
+        [Parameter(Mandatory = $false, ParameterSetName = 'Disks_List')]
         [System.String]
-        $Location,
+        $UserSubscriptionId,
     
         [Parameter(Mandatory = $false, ParameterSetName = 'Disks_List')]
         [System.String]
@@ -163,7 +163,7 @@ return
 }
     if ('Disks_List' -eq $PsCmdlet.ParameterSetName) {
         Write-Verbose -Message 'Performing operation ListWithHttpMessagesAsync on $ComputeAdminClient.'
-        $TaskResult = $ComputeAdminClient.Disks.ListWithHttpMessagesAsync($Location, $(if ($PSBoundParameters.ContainsKey('TenantSubscriptionId')) { $TenantSubscriptionId } else { [NullString]::Value }), $(if ($PSBoundParameters.ContainsKey('Status')) { $Status } else { [NullString]::Value }), $(if ($PSBoundParameters.ContainsKey('SharePath')) { $SharePath } else { [NullString]::Value }), $Count, $Start)
+        $TaskResult = $ComputeAdminClient.Disks.ListWithHttpMessagesAsync($Location, $(if ($PSBoundParameters.ContainsKey('UserSubscriptionId')) { $UserSubscriptionId } else { [NullString]::Value }), $(if ($PSBoundParameters.ContainsKey('Status')) { $Status } else { [NullString]::Value }), $(if ($PSBoundParameters.ContainsKey('SharePath')) { $SharePath } else { [NullString]::Value }), $Count, $Start)
     } elseif ('Disks_Get' -eq $PsCmdlet.ParameterSetName -or 'InputObject_Disks_Get' -eq $PsCmdlet.ParameterSetName -or 'ResourceId_Disks_Get' -eq $PsCmdlet.ParameterSetName) {
         Write-Verbose -Message 'Performing operation GetWithHttpMessagesAsync on $ComputeAdminClient.'
         $TaskResult = $ComputeAdminClient.Disks.GetWithHttpMessagesAsync($Location, $DiskId)

@@ -18,7 +18,7 @@
     "x-ps-module-info": {
       "name": "ComputeAdminClient",
       "moduleVersion": "0.0.1",
-      "guid": "cfd8f8ce-984e-425a-bb6f-64aefc1b9784",
+      "guid": "e6446920-6aae-4d36-b5f2-ae57f3af4e63",
       "description": "Compute Admin Client",
       "author": "",
       "companyName": "",
@@ -123,6 +123,49 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs": {
+      "get": {
+        "x-ps-cmdlet-infos": [
+          {
+            "name": "Get-DiskMigrationJob",
+            "description": "Returns a list of disk migration jobs.",
+            "defaultParameterSet": "DiskMigrationJobs_List",
+            "generateCommand": true
+          }
+        ],
+        "parameters": {
+          
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs/{migrationId}": {
+      "get": {
+        "x-ps-cmdlet-infos": [
+          {
+            "name": "Get-DiskMigrationJob",
+            "description": "Returns the requested disk migration job.",
+            "defaultParameterSet": "DiskMigrationJobs_List",
+            "generateCommand": true
+          }
+        ],
+        "parameters": {
+          
+        }
+      },
+      "put": {
+        "x-ps-cmdlet-infos": [
+          {
+            "name": "New-DiskMigrationJob",
+            "description": "Create a disk migration job.",
+            "defaultParameterSet": "DiskMigrationJobs_Create",
+            "generateCommand": true
+          }
+        ],
+        "parameters": {
+          
+        }
+      }
+    },
     "/providers/Microsoft.Compute.Admin/operations": {
       "get": {
         "x-ps-cmdlet-infos": [
@@ -179,49 +222,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations/{migrationId}/Cancel": {
-      "post": {
-        "x-ps-cmdlet-infos": [
-          {
-            "name": "Stop-DiskMigration",
-            "description": "Cancel a disk migration job.",
-            "defaultParameterSet": "DiskMigrations_Cancel",
-            "generateCommand": true
-          }
-        ],
-        "parameters": {
-          
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations/{migrationId}": {
-      "put": {
-        "x-ps-cmdlet-infos": [
-          {
-            "name": "New-DiskMigration",
-            "description": "Create a disk migration job.",
-            "defaultParameterSet": "DiskMigrations_Create",
-            "generateCommand": true
-          }
-        ],
-        "parameters": {
-          
-        }
-      },
-      "get": {
-        "x-ps-cmdlet-infos": [
-          {
-            "name": "Get-DiskMigration",
-            "description": "Returns the requested disk migration job.",
-            "defaultParameterSet": "DiskMigrations_List",
-            "generateCommand": true
-          }
-        ],
-        "parameters": {
-          
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/platformImage": {
       "get": {
         "x-ps-cmdlet-infos": [
@@ -267,13 +267,13 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations": {
-      "get": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrationjobs/{migrationId}/Cancel": {
+      "post": {
         "x-ps-cmdlet-infos": [
           {
-            "name": "Get-DiskMigration",
-            "description": "Returns a list of disk migration jobs.",
-            "defaultParameterSet": "DiskMigrations_List",
+            "name": "Stop-DiskMigrationJob",
+            "description": "Cancel a disk migration job.",
+            "defaultParameterSet": "DiskMigrationJobs_Cancel",
             "generateCommand": true
           }
         ],
@@ -498,6 +498,20 @@
         
       }
     },
+    "DiskMigrationJob": {
+      "x-ps-cmdlet-infos": [
+        {
+          "name": "New-DiskMigrationJobObject",
+          "description": "Disk migration job.",
+          "defaultParameterSet": "DiskMigrationJob",
+          "generateCommand": true,
+          "generateOutputFormat": true
+        }
+      ],
+      "properties": {
+        
+      }
+    },
     "OsType": {
       "x-ps-cmdlet-infos": [
         {
@@ -510,6 +524,41 @@
       ],
       "properties": {
         
+      }
+    },
+    "DiskMigrationJobList": {
+      "x-ps-cmdlet-infos": [
+        {
+          "name": "New-DiskMigrationJobListObject",
+          "description": "List of disk migration jobs.",
+          "defaultParameterSet": "DiskMigrationJobList",
+          "generateCommand": true,
+          "generateOutputFormat": true
+        }
+      ],
+      "properties": {
+        "value": {
+          "x-ps-parameter-info": {
+            "name": "Value",
+            "description": "List of disk migration jobs."
+          },
+          "x-ps-output-format-info": {
+            "include": true,
+            "position": 0,
+            "width": 10
+          }
+        },
+        "nextLink": {
+          "x-ps-parameter-info": {
+            "name": "NextLink",
+            "description": "URI to the next page."
+          },
+          "x-ps-output-format-info": {
+            "include": true,
+            "position": 1,
+            "width": 10
+          }
+        }
       }
     },
     "VMExtensionProperties": {
@@ -616,41 +665,6 @@
         
       }
     },
-    "DiskMigrationList": {
-      "x-ps-cmdlet-infos": [
-        {
-          "name": "New-DiskMigrationListObject",
-          "description": "List of disk migration jobs.",
-          "defaultParameterSet": "DiskMigrationList",
-          "generateCommand": true,
-          "generateOutputFormat": true
-        }
-      ],
-      "properties": {
-        "value": {
-          "x-ps-parameter-info": {
-            "name": "Value",
-            "description": "List of disk migration jobs."
-          },
-          "x-ps-output-format-info": {
-            "include": true,
-            "position": 0,
-            "width": 10
-          }
-        },
-        "nextLink": {
-          "x-ps-parameter-info": {
-            "name": "NextLink",
-            "description": "URI to the next page."
-          },
-          "x-ps-output-format-info": {
-            "include": true,
-            "position": 1,
-            "width": 10
-          }
-        }
-      }
-    },
     "MigrationJobStatus": {
       "x-ps-cmdlet-infos": [
         {
@@ -663,6 +677,96 @@
       ],
       "properties": {
         
+      }
+    },
+    "DiskMigrationJobProperties": {
+      "x-ps-cmdlet-infos": [
+        {
+          "name": "New-DiskMigrationJobPropertiesObject",
+          "description": "Disk migration job properties.",
+          "defaultParameterSet": "DiskMigrationJobProperties",
+          "generateCommand": true,
+          "generateOutputFormat": true
+        }
+      ],
+      "properties": {
+        "subtasks": {
+          "x-ps-parameter-info": {
+            "name": "Subtasks",
+            "description": "The list of child migration tasks."
+          },
+          "x-ps-output-format-info": {
+            "include": false,
+            "position": -1,
+            "width": 10
+          }
+        },
+        "creationTime": {
+          "x-ps-parameter-info": {
+            "name": "CreationTime",
+            "description": "The job creation time."
+          },
+          "x-ps-output-format-info": {
+            "include": true,
+            "position": 0,
+            "width": 10
+          }
+        },
+        "endTime": {
+          "x-ps-parameter-info": {
+            "name": "EndTime",
+            "description": "The job end time."
+          },
+          "x-ps-output-format-info": {
+            "include": true,
+            "position": 1,
+            "width": 10
+          }
+        },
+        "targetShare": {
+          "x-ps-parameter-info": {
+            "name": "TargetShare",
+            "description": "The target share of migration job."
+          },
+          "x-ps-output-format-info": {
+            "include": true,
+            "position": 2,
+            "width": 10
+          }
+        },
+        "startTime": {
+          "x-ps-parameter-info": {
+            "name": "StartTime",
+            "description": "The job start time."
+          },
+          "x-ps-output-format-info": {
+            "include": true,
+            "position": 3,
+            "width": 10
+          }
+        },
+        "migrationId": {
+          "x-ps-parameter-info": {
+            "name": "MigrationId",
+            "description": "The disk migration id."
+          },
+          "x-ps-output-format-info": {
+            "include": true,
+            "position": 4,
+            "width": 10
+          }
+        },
+        "status": {
+          "x-ps-parameter-info": {
+            "name": "Status",
+            "description": "The current status of disk migration job."
+          },
+          "x-ps-output-format-info": {
+            "include": false,
+            "position": -1,
+            "width": 10
+          }
+        }
       }
     },
     "DiskList": {
@@ -793,10 +897,10 @@
             "width": 10
           }
         },
-        "sharePath": {
+        "userResourceId": {
           "x-ps-parameter-info": {
-            "name": "SharePath",
-            "description": "The disk share path."
+            "name": "UserResourceId",
+            "description": "The disk resource Uri from tenant view."
           },
           "x-ps-output-format-info": {
             "include": true,
@@ -804,10 +908,10 @@
             "width": 10
           }
         },
-        "tenantId": {
+        "sharePath": {
           "x-ps-parameter-info": {
-            "name": "TenantId",
-            "description": "The disk resource Uri from tenant view."
+            "name": "SharePath",
+            "description": "The disk share path."
           },
           "x-ps-output-format-info": {
             "include": true,
@@ -845,6 +949,17 @@
           "x-ps-output-format-info": {
             "include": true,
             "position": 4,
+            "width": 10
+          }
+        },
+        "provisionSize": {
+          "x-ps-parameter-info": {
+            "name": "ProvisionSize",
+            "description": "The provision size of disk."
+          },
+          "x-ps-output-format-info": {
+            "include": false,
+            "position": -1,
             "width": 10
           }
         }
@@ -1313,20 +1428,6 @@
         
       }
     },
-    "DiskMigration": {
-      "x-ps-cmdlet-infos": [
-        {
-          "name": "New-DiskMigrationObject",
-          "description": "Disk migration job.",
-          "defaultParameterSet": "DiskMigration",
-          "generateCommand": true,
-          "generateOutputFormat": true
-        }
-      ],
-      "properties": {
-        
-      }
-    },
     "VMExtensionList": {
       "x-ps-cmdlet-infos": [
         {
@@ -1402,96 +1503,6 @@
           }
         }
       }
-    },
-    "DiskMigrationProperties": {
-      "x-ps-cmdlet-infos": [
-        {
-          "name": "New-DiskMigrationPropertiesObject",
-          "description": "Disk migration job properties.",
-          "defaultParameterSet": "DiskMigrationProperties",
-          "generateCommand": true,
-          "generateOutputFormat": true
-        }
-      ],
-      "properties": {
-        "subtasks": {
-          "x-ps-parameter-info": {
-            "name": "Subtasks",
-            "description": "The list of child migration tasks."
-          },
-          "x-ps-output-format-info": {
-            "include": false,
-            "position": -1,
-            "width": 10
-          }
-        },
-        "creationTime": {
-          "x-ps-parameter-info": {
-            "name": "CreationTime",
-            "description": "The job creation time."
-          },
-          "x-ps-output-format-info": {
-            "include": true,
-            "position": 0,
-            "width": 10
-          }
-        },
-        "endTime": {
-          "x-ps-parameter-info": {
-            "name": "EndTime",
-            "description": "The job end time."
-          },
-          "x-ps-output-format-info": {
-            "include": true,
-            "position": 1,
-            "width": 10
-          }
-        },
-        "targetShare": {
-          "x-ps-parameter-info": {
-            "name": "TargetShare",
-            "description": "The target share of migration job."
-          },
-          "x-ps-output-format-info": {
-            "include": true,
-            "position": 2,
-            "width": 10
-          }
-        },
-        "startTime": {
-          "x-ps-parameter-info": {
-            "name": "StartTime",
-            "description": "The job start time."
-          },
-          "x-ps-output-format-info": {
-            "include": true,
-            "position": 3,
-            "width": 10
-          }
-        },
-        "migrationId": {
-          "x-ps-parameter-info": {
-            "name": "MigrationId",
-            "description": "The disk migration id."
-          },
-          "x-ps-output-format-info": {
-            "include": true,
-            "position": 4,
-            "width": 10
-          }
-        },
-        "status": {
-          "x-ps-parameter-info": {
-            "name": "Status",
-            "description": "The current status of disk migration job."
-          },
-          "x-ps-output-format-info": {
-            "include": false,
-            "position": -1,
-            "width": 10
-          }
-        }
-      }
     }
   },
   "parameters": {
@@ -1499,6 +1510,13 @@
       "x-ps-parameter-info": {
         "name": "Publisher",
         "description": "Name of the publisher.",
+        "flatten": false
+      }
+    },
+    "MigrationJobStatusParameter": {
+      "x-ps-parameter-info": {
+        "name": "Status",
+        "description": "The parameters of disk migration job status.",
         "flatten": false
       }
     },
@@ -1516,10 +1534,10 @@
         "flatten": false
       }
     },
-    "DiskStartParameter": {
+    "UserSubscriptionIdParameter": {
       "x-ps-parameter-info": {
-        "name": "Start",
-        "description": "The start index of disks in query.",
+        "name": "UserSubscriptionId",
+        "description": "Tenant Subscription Id which the resource belongs to.",
         "flatten": false
       }
     },
@@ -1530,17 +1548,17 @@
         "flatten": false
       }
     },
-    "TenantSubscriptionIdParameter": {
+    "SubscriptionIdParameter": {
       "x-ps-parameter-info": {
-        "name": "TenantSubscriptionId",
-        "description": "Tenant Subscription Id which the resource belongs to.",
+        "name": "SubscriptionId",
+        "description": "Subscription credentials that uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.",
         "flatten": false
       }
     },
-    "MigrationJobStatusParameter": {
+    "DiskStartParameter": {
       "x-ps-parameter-info": {
-        "name": "Status",
-        "description": "The parameters of disk migration job status.",
+        "name": "Start",
+        "description": "The start index of disks in query.",
         "flatten": false
       }
     },
@@ -1555,13 +1573,6 @@
       "x-ps-parameter-info": {
         "name": "TargetShare",
         "description": "The target share name.",
-        "flatten": false
-      }
-    },
-    "SubscriptionIdParameter": {
-      "x-ps-parameter-info": {
-        "name": "SubscriptionId",
-        "description": "Subscription credentials that uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.",
         "flatten": false
       }
     },

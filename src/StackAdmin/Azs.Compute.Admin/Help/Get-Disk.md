@@ -13,8 +13,8 @@ schema: 2.0.0
 
 ### Disks_List (Default)
 ```
-Get-Disk [-TenantSubscriptionId <String>] [-Start <Int32>] [-SharePath <String>] [-Count <Int32>]
- -Location <String> [-Status <String>] [<CommonParameters>]
+Get-Disk -Location <String> [-Start <Int32>] [-SharePath <String>] [-Count <Int32>]
+ [-UserSubscriptionId <String>] [-Status <String>] [<CommonParameters>]
 ```
 
 ### ResourceId_Disks_Get
@@ -166,7 +166,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TenantSubscriptionId
+### -UserSubscriptionId
 Tenant Subscription Id which the resource belongs to.
 
 ```yaml
