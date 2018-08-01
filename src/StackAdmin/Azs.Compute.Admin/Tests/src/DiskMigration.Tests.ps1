@@ -91,19 +91,19 @@ InModuleScope Azs.Compute.Admin {
             }
 			$migrationId = "ba0644a4-c2ed-4e3c-a167-089a32865297"; # this should be the same as session Records
 
-            $migration = New-AzsDiskMigration -Location $global:Location -Name $migrationId -TargetShare $global:TargetShare -Disks $toMigrationDisks
+            $migration = Start-AzsDiskMigrationJob -Location $global:Location -Name $migrationId -TargetShare $global:TargetShare -Disks $toMigrationDisks
 			ValidateDiskMigration -DiskMigration $migration
 
-			$migration = Stop-DiskMigration -Location $global:Location -MigrationId $migration.MigrationId
+			$migration = Stop-AzsDiskMigrationJob -Location $global:Location -Name $migration.MigrationId
 			ValidateDiskMigration -DiskMigration $migration 
 
-			$migrationFromGet = Get-AzsDiskMigration -Location $global:Location -Name $migrationId
+			$migrationFromGet = Get-AzsDiskMigrationJob -Location $global:Location -Name $migrationId
 			ValidateDiskMigration -DiskMigration $migrationFromGet 
 
-			$migrationList = Get-AzsDiskMigration -Location $global:Location
+			$migrationList = Get-AzsDiskMigrationJob -Location $global:Location
 			$migrationList | %{ValidateDiskMigration -DiskMigration $_ }
 
-			$migrationSucceededList = Get-AzsDiskMigration -Location $global:Location  -Status "Succeeded"
+			$migrationSucceededList = Get-AzsDiskMigrationJob -Location $global:Location  -Status "Succeeded"
             $migrationSucceededList | %{ValidateDiskMigration -DiskMigration $_ }
         }
     }

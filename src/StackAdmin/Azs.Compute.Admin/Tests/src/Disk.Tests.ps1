@@ -64,12 +64,13 @@ InModuleScope Azs.Compute.Admin {
                 $Disk.Id | Should Not Be $null
                 $Disk.Type | Should Not Be $null
                 $Disk.Name | Should Not Be $null
-                $Disk.ActualSize | Should Not Be $null
+                $Disk.ActualSizeGB | Should Not Be $null
+				$Disk.ProvisionSizeGB | Should Not Be $null
 				$Disk.DiskSku | Should Not Be $null
-				$Disk.ResourceType | Should Not Be $null
+				$Disk.DiskType | Should Not Be $null
 				$Disk.SharePath | Should Not Be $null
 				$Disk.Status | Should Not Be $null
-				$Disk.TenantId | Should Not Be $null
+				$Disk.UserResourceId | Should Not Be $null
 				$Disk.Location | Should Not Be $null
 				$Disk.DiskId | Should Not Be $null
             }
@@ -98,7 +99,7 @@ InModuleScope Azs.Compute.Admin {
 				$List | Should Not Be $null
 				$Disk | Should Not Be $null
 
-				$diskInList = $List | ?{$_.TenantId.Equals($Disk.TenantId)}
+				$diskInList = $List | ?{$_.UserResourceId.Equals($Disk.UserResourceId)}
 				if($diskInList)
 				{
 					$true
@@ -135,9 +136,9 @@ InModuleScope Azs.Compute.Admin {
 			if($disks.Count -gt 0)
 			{
 				$firstDisk = $disks[0]
-				$tenantSubscriptionId = $($firstDisk.TenantId.Split("/", [System.StringSplitOptions]::RemoveEmptyEntries))[1]
-				$disksForSubscription = Get-AzsDisk -Location $global:Location -TenantSubscriptionId $tenantSubscriptionId
-				ValidateDisksTheSame -DisksRight $($disks | ?{$_.TenantId.Contains($tenantSubscriptionId)}) -DisksLeft $disksForSubscription
+				$tenantSubscriptionId = $($firstDisk.UserResourceId.Split("/", [System.StringSplitOptions]::RemoveEmptyEntries))[1]
+				$disksForSubscription = Get-AzsDisk -Location $global:Location -UserSubscriptionId $tenantSubscriptionId
+				ValidateDisksTheSame -DisksRight $($disks | ?{$_.UserResourceId.Contains($tenantSubscriptionId)}) -DisksLeft $disksForSubscription
 
                 $disksForStatus = Get-AzsDisk -Location $global:Location -Status $firstDisk.Status
 				ValidateDisksTheSame -DisksRight $($disks | ?{$_.Status.Equals($firstDisk.Status)}) -DisksLeft $disksForStatus

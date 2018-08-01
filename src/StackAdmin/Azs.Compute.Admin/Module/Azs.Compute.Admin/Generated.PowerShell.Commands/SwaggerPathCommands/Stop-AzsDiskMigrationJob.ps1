@@ -35,8 +35,9 @@ function Stop-AzsDiskMigrationJob
         $Location,
     
         [Parameter(Mandatory = $true, ParameterSetName = 'DiskMigrationJobs_Cancel')]
+        [Alias('MigrationId')]
         [System.String]
-        $MigrationId
+        $Name
     )
 
     Begin 
@@ -75,7 +76,7 @@ function Stop-AzsDiskMigrationJob
 
     if ('DiskMigrationJobs_Cancel' -eq $PsCmdlet.ParameterSetName) {
         Write-Verbose -Message 'Performing operation CancelWithHttpMessagesAsync on $ComputeAdminClient.'
-        $TaskResult = $ComputeAdminClient.DiskMigrationJobs.CancelWithHttpMessagesAsync($Location, $MigrationId)
+        $TaskResult = $ComputeAdminClient.DiskMigrationJobs.CancelWithHttpMessagesAsync($Location, $Name)
     } else {
         Write-Verbose -Message 'Failed to map parameter set to operation method.'
         throw 'Module failed to find operation to execute.'

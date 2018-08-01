@@ -18,7 +18,7 @@
     "x-ps-module-info": {
       "name": "ComputeAdminClient",
       "moduleVersion": "0.0.1",
-      "guid": "e6446920-6aae-4d36-b5f2-ae57f3af4e63",
+      "guid": "def13417-4010-45e1-a226-780edaf4fc85",
       "description": "Compute Admin Client",
       "author": "",
       "companyName": "",
@@ -864,10 +864,10 @@
         }
       ],
       "properties": {
-        "resourceType": {
+        "diskType": {
           "x-ps-parameter-info": {
-            "name": "ResourceType",
-            "description": "The type of the resource."
+            "name": "DiskType",
+            "description": "The type of the disk resource."
           },
           "x-ps-output-format-info": {
             "include": false,
@@ -886,25 +886,25 @@
             "width": 10
           }
         },
-        "diskSku": {
+        "actualSizeGB": {
           "x-ps-parameter-info": {
-            "name": "DiskSku",
-            "description": "the disk sku."
+            "name": "ActualSizeGB",
+            "description": "The actual size of disk in GB."
           },
           "x-ps-output-format-info": {
-            "include": false,
-            "position": -1,
+            "include": true,
+            "position": 1,
             "width": 10
           }
         },
         "userResourceId": {
           "x-ps-parameter-info": {
             "name": "UserResourceId",
-            "description": "The disk resource Uri from tenant view."
+            "description": "The disk resource Uri from user view."
           },
           "x-ps-output-format-info": {
             "include": true,
-            "position": 1,
+            "position": 2,
             "width": 10
           }
         },
@@ -915,18 +915,29 @@
           },
           "x-ps-output-format-info": {
             "include": true,
-            "position": 2,
+            "position": 3,
             "width": 10
           }
         },
-        "actualSize": {
+        "provisionSizeGB": {
           "x-ps-parameter-info": {
-            "name": "ActualSize",
-            "description": "The actual size of disk."
+            "name": "ProvisionSizeGB",
+            "description": "The provision size of disk in GB."
           },
           "x-ps-output-format-info": {
             "include": true,
-            "position": 3,
+            "position": 4,
+            "width": 10
+          }
+        },
+        "diskSku": {
+          "x-ps-parameter-info": {
+            "name": "DiskSku",
+            "description": "the disk sku."
+          },
+          "x-ps-output-format-info": {
+            "include": false,
+            "position": -1,
             "width": 10
           }
         },
@@ -945,17 +956,6 @@
           "x-ps-parameter-info": {
             "name": "DiskId",
             "description": "The disk id."
-          },
-          "x-ps-output-format-info": {
-            "include": true,
-            "position": 4,
-            "width": 10
-          }
-        },
-        "provisionSize": {
-          "x-ps-parameter-info": {
-            "name": "ProvisionSize",
-            "description": "The provision size of disk."
           },
           "x-ps-output-format-info": {
             "include": false,
@@ -1537,7 +1537,7 @@
     "UserSubscriptionIdParameter": {
       "x-ps-parameter-info": {
         "name": "UserSubscriptionId",
-        "description": "Tenant Subscription Id which the resource belongs to.",
+        "description": "User Subscription Id which the resource belongs to.",
         "flatten": false
       }
     },
